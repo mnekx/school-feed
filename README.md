@@ -1,27 +1,22 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# SchoolFeed
 
-> Description the project.
+> The app aims at tracking food transaction in primary school stores, track challenges associated with making sure food is available in these schools especially in rural underserved communities so that the data collected from this system could be used to make future decisions for sustainability of this initiative.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- node.js
+- Express.js
+- RestFull API, RBAC, Server Caching
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://menatwork.com)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -40,17 +35,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Mnemba Chambuya**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/mnekx)
+- Twitter: [@twitterhandle](https://twitter.com/MnembaChambuya)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mnemba-chambuya)
 
 ## 🤝 Contributing
 
@@ -64,9 +53,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Shout outs to CHATGPT 4
 
 ## 📝 License
 
