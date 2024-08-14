@@ -37,9 +37,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Mnemba Chambuya**
 
-- GitHub: [@githubhandle](https://github.com/mnekx)
-- Twitter: [@twitterhandle](https://twitter.com/MnembaChambuya)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mnemba-chambuya)
+- GitHub: [@mnekx](https://github.com/mnekx)
+- Twitter: [@MnembaChambuya](https://twitter.com/MnembaChambuya)
+- LinkedIn: [mnemmba-chambuya](https://www.linkedin.com/in/mnemba-chambuya)
 
 ## 🤝 Contributing
 
