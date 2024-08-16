@@ -100,12 +100,32 @@ const createUser = async (req, res) => {
 
 const getAllUsers = async (req, res) => {
     try {
-        const users = await User.find().select('-password');
+        const userId = req.user._id;
+
+        // Fetch all location access for the user
+        const regions = await UserRegion.find({ user: userId }).select('region');
+        const districts = await UserDistrict.find({ user: userId }).select('district');
+        const wards = await UserWard.find({ user: userId }).select('ward');
+        const villages = await UserVillage.find({ user: userId }).select('village');
+        const schools = await UserSchool.find({ user: userId }).select('school');
+
+        // Query users based on location access
+        const users = await User.find({
+            $or: [
+                { 'assignedLocations.regions': { $in: regions.map(loc => loc.region) } },
+                { 'assignedLocations.districts': { $in: districts.map(loc => loc.district) } },
+                { 'assignedLocations.wards': { $in: wards.map(loc => loc.ward) } },
+                { 'assignedLocations.villages': { $in: villages.map(loc => loc.village) } },
+                { 'assignedLocations.schools': { $in: schools.map(loc => loc.school) } }
+            ]
+        }).select('-password');
+
         res.json(users);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 };
+
 
 const getUserById = async (req, res) => {
     try {

@@ -9,15 +9,16 @@ const {
     getMilestonesByChallenge
 } = require('../controllers/challengeController');
 const { authMiddleware } = require('../middleware/authMiddleware');
+const { checkLocationAccess } = require('../middleware/locationMiddleware');
 
 const router = express.Router();
 
-router.post('/', authMiddleware, createChallenge);
-router.get('/', authMiddleware, getAllChallenges);
-router.get('/:id', authMiddleware, getChallengeById);
-router.put('/:id', authMiddleware, updateChallenge);
-router.delete('/:id', authMiddleware, deleteChallenge);
-router.post('/:id/milestones', authMiddleware, addMilestone);
-router.get('/:id/milestones', authMiddleware, getMilestonesByChallenge);
+router.post('/', authMiddleware, checkLocationAccess, createChallenge);
+router.get('/', authMiddleware, checkLocationAccess, getAllChallenges);
+router.get('/:id', authMiddleware, checkLocationAccess, getChallengeById);
+router.put('/:id', authMiddleware, checkLocationAccess, updateChallenge);
+router.delete('/:id', authMiddleware, checkLocationAccess, deleteChallenge);
+router.post('/:id/milestones', authMiddleware, checkLocationAccess, addMilestone);
+router.get('/:id/milestones', authMiddleware, checkLocationAccess, getMilestonesByChallenge);
 
 module.exports = router;

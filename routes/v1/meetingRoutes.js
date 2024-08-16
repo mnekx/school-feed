@@ -1,11 +1,12 @@
 const express = require('express');
 const { createMeeting, getAllMeetings, getMeetingById } = require('../controllers/meetingController');
 const { authMiddleware } = require('../middleware/authMiddleware');
+const { checkLocationAccess } = require('../middleware/locationMiddleware');
 
 const router = express.Router();
 
-router.post('/', authMiddleware, createMeeting);
-router.get('/', authMiddleware, getAllMeetings);
-router.get('/:id', authMiddleware, getMeetingById);
+router.post('/', authMiddleware, checkLocationAccess, createMeeting);
+router.get('/', authMiddleware, checkLocationAccess, getAllMeetings);
+router.get('/:id', authMiddleware, checkLocationAccess, getMeetingById);
 
 module.exports = router;
