@@ -1,7 +1,7 @@
 const express = require('express');
-const { createUser, getAllUsers, getUserById, updateUser, deleteUser } = require('../controllers/userController');
-const { authMiddleware, adminMiddleware } = require('../middleware/authMiddleware');
-const { checkLocationAccess } = require('../middleware/locationMiddleware');
+const { createUser, getAllUsers, getUserById, updateUser, deleteUser } = require('../../controllers/userController');
+const { authMiddleware, adminMiddleware } = require('../../middleware/authMiddleware');
+const { checkLocationAccess } = require('../../middleware/locationMiddleware');
 
 const router = express.Router();
 

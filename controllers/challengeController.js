@@ -1,5 +1,5 @@
 const { Challenge } = require('../models/challenge');
-const { ChallengeMilestone } = require('../models/challenge_mileston');
+const { ChallengeMilestone } = require('../models/challenge_milestone');
 const { UserSchool } = require('../models/user_schools');
 
 const createChallenge = async (req, res) => {

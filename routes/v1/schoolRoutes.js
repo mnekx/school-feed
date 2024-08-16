@@ -1,7 +1,7 @@
 const express = require('express');
-const { addSchool, getAllSchools, getSchoolById, updateSchool, deleteSchool, addYearlyData } = require('../controllers/schoolController');
-const { authMiddleware, adminMiddleware } = require('../middleware/authMiddleware');
-const { checkLocationAccess } = require('../middleware/locationMiddleware');
+const { addSchool, getAllSchools, getSchoolById, updateSchool, deleteSchool, addYearlyData } = require('../../controllers/schoolController');
+const { authMiddleware, adminMiddleware } = require('../../middleware/authMiddleware');
+const { checkLocationAccess } = require('../../middleware/locationMiddleware');
 
 const router = express.Router();
 

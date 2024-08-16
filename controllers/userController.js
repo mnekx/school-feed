@@ -1,6 +1,10 @@
 const bcrypt = require('bcryptjs');
 const { User } = require('../models/user');
-const { UserRegion, UserDistrict, UserWard, UserVillage, UserSchool } = require('../models');
+const { UserSchool } = require('../models/user_schools');
+const { UserRegion } = require('../models/user_region');
+const { UserDistrict } = require('../models/user_district');
+const { UserWard } = require('../models/user_ward');
+const { UserVillage } = require('../models/user_village');
 
 const createUser = async (req, res) => {
     try {

@@ -7,9 +7,9 @@ const {
     deleteChallenge,
     addMilestone,
     getMilestonesByChallenge
-} = require('../controllers/challengeController');
-const { authMiddleware } = require('../middleware/authMiddleware');
-const { checkLocationAccess } = require('../middleware/locationMiddleware');
+} = require('../../controllers/challengeController');
+const { authMiddleware } = require('../../middleware/authMiddleware');
+const { checkLocationAccess } = require('../../middleware/locationMiddleware');
 
 const router = express.Router();
 

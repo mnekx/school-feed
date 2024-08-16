@@ -1,7 +1,7 @@
 const express = require('express');
-const { createMeeting, getAllMeetings, getMeetingById } = require('../controllers/meetingController');
-const { authMiddleware } = require('../middleware/authMiddleware');
-const { checkLocationAccess } = require('../middleware/locationMiddleware');
+const { createMeeting, getAllMeetings, getMeetingById } = require('../../controllers/meetingController');
+const { authMiddleware } = require('../../middleware/authMiddleware');
+const { checkLocationAccess } = require('../../middleware/locationMiddleware');
 
 const router = express.Router();
 
