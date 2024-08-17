@@ -9,5 +9,5 @@ const ChallengeMileStoneSchema = new mongoose.Schema({
     comments: { type: String }
 });
 
-const ChallengeLifecycle = mongoose.model('ChallengeMileStone', ChallengeMileStoneSchema);
+const ChallengeMileStone = mongoose.model('ChallengeMileStone', ChallengeMileStoneSchema);
 module.exports = { ChallengeMileStone };
