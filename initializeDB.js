@@ -17,13 +17,13 @@ const { FoodContribution } = require('./models/food_contribution');
 const { FoodDistribution } = require('./models/food_distribution');
 const { Meeting } = require('./models/meeting');
 const { Challenge } = require('./models/challenge');
-const { ChallengeMilestone } = require('./models/challenge_milestone');
+const { ChallengeMileStone } = require('./models/challenge_milestone');
 const { SchoolInventory } = require('./models/school_inventory');
-const { UserSchool } = require('../models/user_schools');
-const { UserRegion } = require('../models/user_region');
-const { UserDistrict } = require('../models/user_district');
-const { UserWard } = require('../models/user_ward');
-const { UserVillage } = require('../models/user_village');
+const { UserSchool } = require('./models/user_schools');
+const { UserRegion } = require('./models/user_region');
+const { UserDistrict } = require('./models/user_district');
+const { UserWard } = require('./models/user_ward');
+const { UserVillage } = require('./models/user_village');
 
 const connectDB = async () => {
     try {
@@ -59,7 +59,7 @@ const initializeDatabase = async () => {
         await FoodDistribution.deleteMany({});
         await Meeting.deleteMany({});
         await Challenge.deleteMany({});
-        await ChallengeMilestone.deleteMany({});
+        await ChallengeMileStone.deleteMany({});
         await SchoolInventory.deleteMany({});
         await UserRegion.deleteMany({});
         await UserDistrict.deleteMany({});
@@ -103,7 +103,7 @@ const initializeDatabase = async () => {
         const adminUser = new User({
             name: 'Admin User',
             email: 'admin@example.com',
-            password: await bcrypt.hash('adminpassword', 10),
+            password: await bcrypt.hash('123', 10),
             role: adminRole._id
         });
         await adminUser.save();
