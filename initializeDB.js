@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
+const bcrypt = require('bcryptjs')
 
 // Load Models
 const { Region } = require('./models/region');
@@ -30,8 +31,6 @@ const connectDB = async () => {
         await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useCreateIndex: true,
-            useFindAndModify: false
         });
         console.log('MongoDB connected');
     } catch (err) {
@@ -70,24 +69,25 @@ const initializeDatabase = async () => {
         console.log('Existing data cleared');
 
         // Seed initial data (example)
-        const region = new Region({ name: 'Central Region' });
+        const region = new Region({ name: 'Mara' });
         await region.save();
 
-        const district = new District({ name: 'Central District', region: region._id });
+        const district = new District({ name: 'Bunda DC', region: region._id });
         await district.save();
 
-        const ward = new Ward({ name: 'Central Ward', district: district._id });
+        const ward = new Ward({ name: 'Butimba', district: district._id });
         await ward.save();
 
-        const village = new Village({ name: 'Central Village', ward: ward._id });
+        const village = new Village({ name: 'Bulemba', ward: ward._id });
         await village.save();
 
         const school = new School({
-            name: 'Central Primary School',
+            name: 'Bulemba Primary School',
             village: village._id,
             ward: ward._id,
             district: district._id,
-            region: region._id
+            region: region._id,
+            total_students: 100
         });
         await school.save();
 
