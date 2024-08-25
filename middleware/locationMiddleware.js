@@ -1,8 +1,8 @@
-const { UserSchool } = require('../models/user_schools');
-const { UserRegion } = require('../models/user_region');
-const { UserDistrict } = require('../models/user_district');
-const { UserWard } = require('../models/user_ward');
-const { UserVillage } = require('../models/user_village');
+const { UserSchool } = require('../models/UserSchool');
+const { UserRegion } = require('../models/UserRegion');
+const { UserDistrict } = require('../models/UserDistrict');
+const { UserWard } = require('../models/UserWard');
+const { UserVillage } = require('../models/UserVillage');
 
 const checkLocationAccess = async (req, res, next) => {
   const { regionId, districtId, wardId, villageId, schoolId } = req.body; // Assuming IDs are passed in the body

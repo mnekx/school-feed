@@ -1,7 +1,7 @@
-const { FoodContribution } = require('../models/food_contribution');
-const { FoodDistribution } = require('../models/food_distribution');
-const { SchoolInventory } = require('../models/school_inventory');
-const { UserSchool } = require('../models/user_schools')
+const { FoodContribution } = require('../models/FoodContribution');
+const { FoodDistribution } = require('../models/FoodDistribution');
+const { SchoolInventory } = require('../models/SchoolInventory');
+const { UserSchool } = require('../models/UserSchool')
 
 const addFoodContribution = async (req, res) => {
     try {

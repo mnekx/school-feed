@@ -1,6 +1,6 @@
-const { Meeting } = require('../models/meeting');
-const { MeetingSchoolChallenge } = require('../models/meeting_school_challenge');
-const { UserSchool } = require('../models/user_schools');
+const { Meeting } = require('../models/Meeting');
+const { MeetingSchoolChallenge } = require('../models/MeetingSchoolChallenge');
+const { UserSchool } = require('../models/UserSchool');
 
 const createMeeting = async (req, res) => {
   try {
