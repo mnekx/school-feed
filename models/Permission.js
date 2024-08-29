@@ -18,4 +18,5 @@ Permission.init({
     modelName: 'Permission'
 });
 
+
 module.exports = Permission;

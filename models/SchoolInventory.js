@@ -16,7 +16,7 @@ SchoolInventory.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'FoodTypes',
+            model: 'FoodType',
             key: 'id'
         }
     },

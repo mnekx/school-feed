@@ -15,7 +15,7 @@ FoodType.init({
     }
 }, {
     sequelize,
-    modelName: 'FoodTypes'
+    modelName: 'FoodType'
 });
 
 module.exports = FoodType;
