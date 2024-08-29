@@ -1,6 +1,6 @@
-const { Challenge } = require('../models/challenge');
-const { ChallengeMilestone } = require('../models/challenge_milestone');
-const { UserSchool } = require('../models/user_schools');
+const { Challenge } = require('../models/Challenge');
+const { ChallengeMilestone } = require('../models/ChallengeMilestone');
+const { UserSchool } = require('../models/UserSchool');
 
 const createChallenge = async (req, res) => {
   try {

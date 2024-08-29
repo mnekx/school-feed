@@ -1,6 +1,8 @@
 // middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
-const { User } = require('../models/user');
+const { User } = require('../models/User');
+const Role = require('../models/Role');
+const Permission = require('../models/Permission');
 
 const authMiddleware = async (req, res, next) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');
@@ -24,4 +26,25 @@ const adminMiddleware = async (req, res, next) => {
   next();
 };
 
-module.exports = { authMiddleware, adminMiddleware };
+const checkPermission = (permissionName) => {
+  return async (req, res, next) => {
+      const userRole = req.user.role; // Assuming user's role is stored in the request after authentication
+
+      const role = await Role.findOne({
+          where: { name: userRole },
+          include: {
+              model: Permission,
+              where: { name: permissionName }
+          }
+      });
+
+      if (!role) {
+          return res.status(403).json({ msg: 'Access denied. Insufficient permissions.' });
+      }
+
+      next(); // User has the required permission, proceed to the next middleware/controller
+  };
+};
+
+
+module.exports = { authMiddleware, adminMiddleware ,checkPermission };
