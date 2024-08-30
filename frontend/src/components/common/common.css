@@ -1,0 +1,27 @@
+/* Topbar styles */
+.navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    height: 100vh;
+  }
+  
+  .sidebar .list-group-item {
+    border: none;
+    padding: 10px 20px;
+  }
+  
+  .sidebar .list-group-item a {
+    color: #343a40;
+    font-weight: 500;
+  }
+  
+  .sidebar .list-group-item a:hover {
+    color: #007bff;
+  }
+  
