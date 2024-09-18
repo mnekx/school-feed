@@ -1,31 +1,26 @@
-const { DataTypes, Model } = require('sequelize');
-const { sequelize } = require('../config/db');
-const RolePermission = require('./RolePermission');
-
-class Privilege extends Model {}
-
-Privilege.init({
-    rolePermissionId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: RolePermission,
-            key: 'id'
-        }
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Privilege = sequelize.define('Privilege', {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
     },
-    entityName: {
-        type: DataTypes.STRING,
-        allowNull: false
+    controller: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
     },
-    action: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-}, {
-    sequelize,
-    modelName: 'Privilege',
+    description: {
+      type: DataTypes.TEXT,
+    },
+  }, {
     tableName: 'privileges',
-    timestamps: false
-});
+  });
 
-module.exports = Privilege;
+  Privilege.associate = function(models) {
+    Privilege.belongsToMany(models.Role, { through: 'UserRolePrivilege', foreignKey: 'privilegeId' });
+  };
+
+  return Privilege;
+};
